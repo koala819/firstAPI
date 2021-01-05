@@ -1,4 +1,28 @@
 class UserCardElement extends HTMLElement {
+    set firstName(value){
+        this.setAttribute('first-name',value)
+    }
+
+    get firstName(){
+        return this._firstName
+    }
+
+    set lastName(value){
+        this.setAttribute('last-name',value)
+    }
+
+    get lastName(){
+        return this._lastName
+    }
+
+    set avatarURL(value){
+        this.setAttribute('avatar-url',value)
+    }
+
+    get avatarURL(){
+        return this._avatarURL
+    }
+
     constructor() {
         super()
         this.attachShadow({mode : 'open'})
