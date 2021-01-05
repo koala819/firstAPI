@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My first API</title>
-    <script src="components/Characteres.js"></script>
+    <script src="components/user-card.component.js"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p id="p1"></p>
+    <h1>Créons un composant user-card !</h1>
+    <h2>Ce h2 n'est là que pour vous montrer le problème de CSS Blending et l'utilité du ShadowDOM</h2>
+    <!-- le but avoir une balise <user-card> qui ne nécessite
+        aucun framework ni aucune librairie. ELle marche 
+        par elle-même. Elle peut accepter les attributs 
+        suivants :
+            - first-name="..." => Représente le prénom de
+            l'utilisateur
+            - last-name="..." => Représente le nom de l'utilisateur
+            - avatar-url="..." => Représente la photo de
+            l'utilisateur-->
+    <user-card 
+        first-name="Xavier" 
+        last-name="GENOLHAC" 
+        avatar-url="https://p7.hiclipart.com/preview/536/822/499/giant-panda-bear-red-panda-telus-customer-service-bear-thumbnail.jpg">
+    </user-card>
+    <p>Evidemment cette balise n'existe pas en HTML ...</p>
+
 </body>
 </html>
