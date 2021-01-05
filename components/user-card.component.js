@@ -18,9 +18,15 @@ class UserCardElement extends HTMLElement {
                 h2 {
                     color : green;
                 }
+                ::slotted(a) {
+                    color: red;
+                    padding-right: 20px;
+                }
             </style>
             <img src="${avatarURL}">
+            <slot name ="links"></slot>
             <h2>${firstName} ${lastName}</h2>
+            <slot name ="description"></slot>
             `
     }
 
