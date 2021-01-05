@@ -51,7 +51,18 @@ class UserCardElement extends HTMLElement {
     connectedCallback() {
         this._firstName = this.getAttribute('first-name')
         this._lastName = this.getAttribute('last-name')
-        this._avatarURL = this.getAttribute('avatar-url')  
+        this._avatarURL = this.getAttribute('avatar-url') 
+        
+        this.shadowRoot.querySelector('img').addEventListener
+        ('click', (event) => {
+            console.log(event)
+            this.dispatchEvent(new CustomEvent('image-click', {
+                detail: {
+                    message : "Click sur l'image",
+                }
+            }))
+        })
+        
         this.render()
     }
 

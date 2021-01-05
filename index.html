@@ -27,6 +27,13 @@
         <p slot="description">Xavier est un développeur Junior et il est à fond pour <a href="#">monter</a> en compétence</p>
     </user-card>
     <p>Evidemment cette balise n'existe pas en HTML ...</p>
+    <script>
+        //Nous souhaitons intérargir avec le <user-card>
+            document.querySelector('user-card').addEventListener
+            ('image-click', (event) => {
+                console.log("L'image a été clikée", event)
+            })
+    </script>
 
 </body>
 </html>
