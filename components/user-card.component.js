@@ -2,12 +2,6 @@ class UserCardElement extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({mode : 'open'})
-    }
-
-    connectedCallback() {
-        const firstName = this.getAttribute('first-name')
-        const lastName = this.getAttribute('last-name')
-        const avatarURL = this.getAttribute('avatar-url')
         this.shadowRoot.innerHTML = `
             <style>
                 img {
@@ -23,11 +17,38 @@ class UserCardElement extends HTMLElement {
                     padding-right: 20px;
                 }
             </style>
-            <img src="${avatarURL}">
+            <img src="">
             <slot name ="links"></slot>
-            <h2>${firstName} ${lastName}</h2>
+            <h2></h2>
             <slot name ="description"></slot>
             `
+    }
+
+    connectedCallback() {
+        this._firstName = this.getAttribute('first-name')
+        this._lastName = this.getAttribute('last-name')
+        this._avatarURL = this.getAttribute('avatar-url')  
+        this.render()
+    }
+
+    render() {
+        this.shadowRoot.querySelector('img').src = this._avatarURL
+        this.shadowRoot.querySelector('h2').textContent = this._firstName + ' ' + this._lastName
+    }
+
+    static get observedAttributes() {
+        return ['first-name', 'last-name', 'avatar-url']
+    }
+
+    attributeChangedCallback(name, oldVal, newVal){
+        if (name == 'first-name'){
+            this._firstName = newVal
+        } else if (name == 'last-name'){
+            this._lastName = newVal
+        } else {
+            this._avatarURL = newVal
+        }
+        this.render()
     }
 
 }
