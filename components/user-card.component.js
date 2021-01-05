@@ -56,11 +56,7 @@ class UserCardElement extends HTMLElement {
         this.shadowRoot.querySelector('img').addEventListener
         ('click', (event) => {
             console.log(event)
-            this.dispatchEvent(new CustomEvent('image-click', {
-                detail: {
-                    message : "Click sur l'image",
-                }
-            }))
+            this.dispatchEvent(new MouseEvent('image-click', event))
         })
         
         this.render()
