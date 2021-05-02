@@ -4,5 +4,5 @@
 [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)<br><br>
 <img align="right" width="500" height="500" src="00.jpg">
 
-# Ma première API
-Un petit exemple fait en suivant le [tuto de Lior CHAMLA](https://www.youtube.com/watch?v=zrigq4HIecM&list=PLpUhHhXoxrjf-CGm82kXtbrAtoMsO5xsL) pour comprendre et utiliser une API
+# My first API
+A small example made following the [tuto by Lior CHAMLA](https://www.youtube.com/watch?v=zrigq4HIecM&list=PLpUhHhXoxrjf-CGm82kXtbrAtoMsO5xsL) to understand and use an API
